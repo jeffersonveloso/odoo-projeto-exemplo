@@ -10,6 +10,9 @@
     'category': 'Uncategorized',
     'version': '12.0.1.0.0', # esta é a versão padrão para se começar um módulo!
     'depends': ['base'],
-    #'data': ['views/meu_modelo_view.xml'],
+    'data': [
+        'security/meu_modelo_security.xml',
+        'views/meu_modelo_view.xml'
+    ],
     #'demo': ['demo.xml'],
 }
