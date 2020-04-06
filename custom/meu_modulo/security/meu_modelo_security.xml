@@ -10,15 +10,4 @@
         <field name="perm_write" eval="1"/>
         <field name="perm_unlink" eval="1"/>
     </record>
-
-    <record model="ir.model.access" id="meu_modelo_teste_access_name"> <!-- TODO acl id -->
-        <field name="name">meu.modelo_teste access name</field> <!-- TODO acl name -->
-        <field name="model_id" ref="model_meu_modelo_teste"/>
-        <!-- TODO review and adapt -->
-        <field name="group_id" ref="base.group_user"/> <!-- Grupo usuário interno -->
-        <field name="perm_read" eval="1"/>
-        <field name="perm_create" eval="1"/>
-        <field name="perm_write" eval="1"/>
-        <field name="perm_unlink" eval="1"/>
-    </record>
 </odoo>

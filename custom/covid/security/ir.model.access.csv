@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_covid_comorbidade,access_covid_comorbidade,model_covid_comorbidade,base.group_user,1,1,1,1
+access_covid_diagnostico,access_covid_diagnostico,model_covid_diagnostico,base.group_user,1,1,1,1
+access_covid_sintomas,access_covid_sintomas,model_covid_sintomas,base.group_user,1,1,1,1

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_covid_comorbidade" model="ir.actions.act_window">
+        <field name="name">Comorbidade</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">covid.comorbidade</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p>
+                <p>
+                    <!-- More details about what a user can do with this object will be OK -->
+                </p>
+        </field>
+    </record>
+
+    <record id="covid_comorbidade" model="ir.ui.menu">
+        <field name="name">Comorbidade</field>
+        <field name="sequence" eval="90"/>
+        <field name="parent_id" ref="covid_config"/>
+        <field name="action" ref="action_covid_comorbidade"/>
+    </record>
+
+</odoo>

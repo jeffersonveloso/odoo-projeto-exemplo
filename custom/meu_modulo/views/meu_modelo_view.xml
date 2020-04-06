@@ -23,11 +23,12 @@
     </record>
 
     <record id="meu_modelo_view_tree" model="ir.ui.view">
-        <field name="name">Meu modulo Form</field>
+        <field name="name">Meu modulo Tree</field>
         <field name="model">meu.modelo</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="partner_ids"/>
                 <field name="date"/>
             </tree>
         </field>
@@ -46,37 +47,24 @@
     </record>
 
 
+    <menuitem id="main_biblioteca_menu" name="Biblioteca do Jeff"/>
+
+    <menuitem
+        id="meu_modelo_menu"
+        name="Biblioteca do Jeff"
+        parent="main_biblioteca_menu" sequence="1"/>
+
     <act_window
         id="meu_modelo_action"
         name="Minhas ações"
         res_model="meu.modelo" />
 
     <menuitem
-        id="meu_modelo_menu"
+        id="minhas_acoes_menu"
         name="Meu Menu"
         action="meu_modelo_action"
-        parent=""
-        sequence="5" />
+        parent="meu_modelo_menu"
+        sequence="1" />
 
-    <record id="meu_modelo_view_form" model="ir.ui.view">
-        <field name="name"> Meu modulo Form </field>
-        <field name="model">meu.modelo_teste</field>
-        <field name="arch" type="xml">
-            <form>
-                <group>
-                    <field name="title"/>
-                    <field name="author" widget="many2many_tags"/>
-                    <field name="editora" widget="many2many_tags"/>
-                </group>
-            </form>
-        </field>
-    </record>
-
-    <act_window
-            id="meu_modelo_teste_action"
-            name="Meus Livros"
-            res_model="meu.modelo_teste" />
-
-    <menuitem id="meu_modelo_teste_menu" name="Livros" action="meu_modelo_teste_action" parent="" sequence="6"/>
 
 </odoo>

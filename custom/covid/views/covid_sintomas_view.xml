@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="covid_sintomas_view_form" model="ir.ui.view">
+            <field name="name">view.covid.sintomas.form</field>
+            <field name="model">covid.sintomas</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <button name="botao_criar_sintoma_dor_corpo" type="object" string="Criar dor no corpo"/>
+                        <button name="botao_criar_comorbidade" type="object" string="Criar Comorbidade através da tela de sintomas"/>
+                        <button name="converter_em_sintomas_graves" type="object" string="Converter em Grave"/>
+                    <group>
+                        <field name="codigo_sid"/>
+                        <field name="sintomas"></field>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+        <record id="action_covid_sintomas" model="ir.actions.act_window">
+            <field name="name">Sintomas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">covid.sintomas</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p>
+                <p>
+                    <!-- More details about what a user can do with this object will be OK -->
+                </p>
+            </field>
+        </record>
+
+        <record id="covid_sintomas" model="ir.ui.menu">
+            <field name="name">Sintomas</field>
+            <field name="sequence" eval="100"/>
+            <field name="parent_id" ref="covid_config"/>
+            <field name="action" ref="action_covid_sintomas"/>
+        </record>
+
+</odoo>

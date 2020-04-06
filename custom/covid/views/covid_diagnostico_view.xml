@@ -1,0 +1,53 @@
+<odoo>
+
+    <record id="view_covid_diagnostico_form" model="ir.ui.view">
+        <field name="name">view.covid.diagnostico.form</field>
+        <field name="model">covid.diagnostico</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group name="esquerda">
+                            <field name="paciente_id"/>
+                            <field name="medico_id"/>
+                        </group>
+                        <group name="direita">
+                            <field name="data_diagnostico"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="comorbidade_ids" widget="many2many_checkboxes"/>
+                        <field name="sintomas_ids" widget="many2many_tags" options='{"no_open": True, "no_create": True}' />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_covid_diagnostico" model="ir.actions.act_window">
+        <field name="name">Diagnostico</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">covid.diagnostico</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p>
+            <p>
+                <!-- More details about what a user can do with this object will be OK -->
+            </p>
+        </field>
+    </record>
+
+
+    <record id="covid_diagnostico" model="ir.ui.menu">
+        <field name="name">Diagnostico</field>
+        <field name="sequence" eval="99"/>
+        <field name="parent_id" ref="covid_submenu"/>
+        <field name="action" ref="action_covid_diagnostico"/>
+    </record>
+
+</odoo>

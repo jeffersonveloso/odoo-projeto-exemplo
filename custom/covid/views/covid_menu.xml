@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record model="ir.ui.menu" id="covid_main_menu">
+            <field name="name">Covid</field>
+            <field name="sequence" eval="99"></field>
+        </record>
+
+        <record model="ir.ui.menu" id="covid_submenu">
+            <field name="name">Covid</field>
+            <field name="sequence" eval="99" />
+            <field name="parent_id"  ref="covid_main_menu"/>
+        </record>
+
+        <record model="ir.ui.menu" id="covid_config">
+            <field name="name">Configrações</field>
+            <field  name="sequence" eval="999"/>
+            <field name="parent_id" ref="covid_main_menu" />
+        </record>
+</odoo>
